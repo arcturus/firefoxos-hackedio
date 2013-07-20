@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>HACKED.io: Hands on FirefoxOS</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/ffos.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h3>HACKED.io</h3>
+					<h1>Hands on <br/>FirefoxOS</h1>
+					<img src="img/FirefoxOS.2.png"></img>
+				</section>
+
+				<section>
+					<h3>Hello!
+					<p></p>
+					<p>Francisco Jordano</p>
+					<p>
+					<img src="img/twitter.png" class="logo-social"></img>@mepartoconmigo
+					</p>
+					<p>
+					<img src="img/github.png" class="logo-social"></img>arcturus
+					</p>
+					<div id="foxtail"></div>
+				</section>
+
+				<section>
+					<section>
+						<h2>Please remember this:</h2>
+						<h1 class="fragment">2013</h1>
+					</section>
+					<section>
+						<h2>Remember 2013</h2>
+						<p>The first HACKED.io</p>
+						<p><img src="img/hacked.png"></img></p>
+					</section>
+					<section>
+						<h2>Remember 2013</h2>
+						<p>The year she is becoming great grandmother</p>
+						<p><img src="img/queen.jpg"></img></p>
+					</section>
+					<section>
+						<h2>Remember 2013</h2>
+						<p>The year of the change</p>
+						<p><img src="img/change_ahead.jpg"></img></p>
+					</section>
+					<section>
+						<h2>Remember 2013</h2>
+						<p>The change of the mobile world ...</p>
+						<p><img src="img/players.jpg"></img></p>
+					</section>
+					<section>
+						<h2>Remember 2013</h2>
+						<p>The year of the alternatives</p>
+						<p><img src="img/ubuntu.jpg"></img></p>
+					</section>
+					<section>
+						<h2>Remember 2013</h2>
+						<p>... more than one alternative!</p>
+						<p><img src="img/jolla.jpg"></img></p>
+					</section>
+					<section>
+						<h2>Remember 2013</h2>
+						<p>... the year of Firefox OS</p>
+						<p><img src="img/firefox-os.jpg"></img></p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>The FirefoxOS road trip</h2>
+						<p>Just two years ago we had this crazy idea</p>
+						<img src="img/2_years.jpg"></img>
+					</section>
+					<section>
+						<h2>The FirefoxOS road trip</h2>
+						<p>The web now lives in our pocket</p>
+						<img src="img/mozilla-ow.jpg"></img>
+					</section>
+					<section>
+						<h2>The FirefoxOS road trip</h2>
+						<p>Let's create a phone based on Web technologies</p>
+						<img src="img/firefox-phone.png"></img>
+					</section>
+					<section>
+						<h2>The FirefoxOS road trip</h2>
+						<p>Born to make the web a better place</p>
+						<img src="img/love_the_web_2.jpg"></img>
+					</section>
+					<section>
+						<h2>The FirefoxOS road trip</h2>
+						<p>Now it's not a prototype any more</p>
+						<img src="img/zte_open_2.jpg"></img>
+					</section>
+					<section>
+						<h2>The FirefoxOS road trip</h2>
+						<p>Has been launched in Spain</p>
+						<video preload="auto" style="width: 532px; height: 532px;" src="img/ffos_spain.ogv"></video>
+					</section>
+					<section>
+						<h2>The FirefoxOS road trip</h2>
+						<p>... and Poland</p>
+						<img src="img/firefoxos_poland.jpg"></img>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Hands on Firefox OS</h2>
+						<p>How we do create web apps for Firefox OS?</p>
+						<p><img src="img/html5_css_javascript.png"></img></p>
+						<p>This sounds familiar</p>
+					</section>
+
+					<section>
+						<h2>Define your Web App</h2>
+						<p>manifest.webapp</p>
+						<pre>
+							<code contenteditable>
+{
+    "version": "1",
+    "name": "Firefox OS Boilerplate App",
+    "launch_path": "/Firefox-OS-Boilerplate-App/index.html",
+    "description": "Boilerplate Firefox OS app with example use cases to get started",
+    "icons": {
+        "64": "/Firefox-OS-Boilerplate-App/images/logo64.png",
+        "128": "/Firefox-OS-Boilerplate-App/images/logo128.png"
+    },
+    "developer": {
+        "name": "Robert Nyman",
+        "url": "http://robertnyman.com"
+    },
+    "installs_allowed_from": ["*"],
+    "default_locale": "en",
+    "permissions": {
+        "desktop-notification": {
+            "description" : "To show notifications"
+        },
+        "geolocation": {
+            "description" : "Marking out user location"
+        }
+    }
+}
+							</code>
+						</pre>
+						<p><pre>application/x-web-app-manifest+json</pre></p>
+					</section>
+					<section>
+						<h2> ... just that?</h2>
+						<p>Almost! We can choose how to distribute our web apps</p>
+						<p class="fragment"><strong>Hosted apps</strong>: All your files belongs ... to your self</p>
+						<p class="fragment"><strong>Packaged apps</strong>: You pack everything you need on a zip file that lives on the phone</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>New set of Web APIs</h2>
+						<p>To power you apps, to give you control over new hardware!</p>
+						<p>Of course to be standarised by W3C</p>
+					</section>
+					<section>
+						<h2>Dialer api</h2>
+						<pre>
+						<code contenteditable>
+var call = navigator.mozTelephony.dial('555-333-222-666');
+call.onconnected = function onConnected(evt) {
+	console.log('Better start to speak now');
+};
+call.ondisconnected = function onDisconnected(evt) {
+	console.log('Call too long, dude, your bill is getting a bit crazy');
+};
+call.onerror = function onError(evt) {
+	console.log('This is embarrassing');
+};
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>SMS api</h2>
+						<pre>
+						<code contenteditable>
+var sms = navigator.mozMobileMessage.send('555-333-222-666', 
+	"Mum I'm OK, I finished all the vegies");
+sms.onsucces = function onSuccess(evt) {
+	console.log('Now your mum can go to sleep happy');
+};
+sms.onerror = function onError(evt) {
+	console.log('Problems ahead');
+};
+							</code>
+						</pre>
+					</section>
+
+					<section>
+						<h2>Device Storage api</h2>
+						<pre>
+						<code contenteditable>
+var deviceStorage = navigator.getDeviceStorage('/books');
+var request = deviceStorage.get('Gone With The Wind.ebook');
+request.onsuccess = function onSuccess(evt) {
+	//request.result is an File object ...
+};
+
+var request = deviceStorage.delete('horrible_profile_photo.jpg');
+request.onerror = function onError(evt) {
+	console.log('Deal with it dude');
+}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>Offline/Online detection</h2>
+						<p>Not new but pretty useful on a mobile device</p>
+						<pre>
+						<code contenteditable>
+var amIOnline = navigator.onLine;
+document.body.addEventListener('offline', function onOffline(evt) {
+	alert('Hello dear user, you lost your connection');
+});
+document.body.addEventListener('online', function onLine(evt) {
+	alert('We are back in business!');
+})
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>Proximity Sensor</h2>
+						<p>Don't hang up the phone with your beard</p>
+						<pre>
+						<code contenteditable>
+window.addEventListener('userproximity', function(event) {
+  if (event.near) {
+    // let's power off the screen
+    navigator.mozPower.screenEnabled = false;
+  } else {
+    // Otherwise, let's power on the screen
+    navigator.mozPower.screenEnabled = true;
+  }
+});
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>Web Activities</h2>
+						<p>Asking for a contact</p>
+						<pre>
+						<code contenteditable>
+var activity = new MozActivity({
+  name: 'pick',
+  data: {
+    type: 'webcontacts/contact'
+  }
+});
+activity.onsuccess = function onSuccess() { 
+	var contact = this.result;
+	console.log(contact.name);
+};
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>Payments!</h2>
+						<p>(even integrated with user bills in some countries, and now testeable through simulator)</p>
+						<pre>
+						<code contenteditable>
+var request = navigator.mozPay([signedJWT1, signedJWTn]);
+request.onsuccess = function onSuccess() {
+	console.log('Payment succesfully completed \o/');
+};
+request.onerror = function onError() {
+	console.log('Upps! This is embarrassing');
+}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>Identity!</h2>
+						<p>Integration with <b>Mozilla Persona</b></p>
+						<pre>
+						<code contenteditable>
+var currentUser = 'bob@example.com';
+
+navigator.mozid.watch({
+  loggedInUser: currentUser,
+  onlogin: function(assertion) {
+    console.log('Hello ' + currentUser);
+  },
+  onlogout: function() {
+    console.log('We are alone and devastated');
+  }
+});
+							</code>
+						</pre>
+						<p><a href="https://developer.mozilla.org/en-US/docs/Persona/Quick_setup">https://developer.mozilla.org/en-US/docs/Persona/Quick_setup</a></p>
+					</section>
+					<section>
+						<h2>Desktop Notifications</h2>
+						<pre>
+						<code contenteditable>
+var notification = createNotification('My App', 'My Message');
+notification.show();
+notification.onclick = function (){};
+							</code>
+						</pre>
+						<p>Example application</p>
+						<p><a href="https://github.com/arcturus/firefox-os-notifications">https://github.com/arcturus/firefox-os-notifications</a></p>
+					</section>
+					<section>
+						<h2>Push Notifications</h2>
+						<p>\o/ Working in version 1.1!!</p>
+						<pre>
+						<code contenteditable>
+var req = navigator.push.register();
+  
+req.onsuccess = function(e) {
+  var endpoint = req.result;
+  console.log("New endpoint: " + endpoint );
+}
+
+req.onerror = function(e) {
+  console.log("Error getting a new endpoint: " + JSON.stringify(e));
+}
+
+window.navigator.mozSetMessageHandler('push', function(e) {
+  console.log('My endpoint is ' + e.pushEndpoint);
+  console.log('My new version is ' +  e.version);
+});
+							</code>
+						</pre>
+						<p>Example application</p>
+						<p><a href="https://github.com/arcturus/firefox-os-simplepush">https://github.com/arcturus/firefox-os-simplepush</a></p>
+					</section>
+					<section>
+						<h2>Push Notifications</h2>
+						<p>\o/ Working in version 1.1!!</p>
+						<p><img src="img/pns_example.png"></img></p>
+					</section>
+					<section>
+						<h2>Lots of new APIS</h2>
+						<p>Track them:</p>
+						<p><a href="https://developer.mozilla.org/en-US/docs/WebAPI" target="_blank">https://developer.mozilla.org/en-US/docs/WebAPI</a></p>
+					</section>
+					
+				</section>
+
+				<section>
+					<section>
+						<h2>Tools?</h2>
+						<p>I would start getting my hands on a browser</p>
+						<p class="fragment">Preferable Firefox Nightly, but use the one you feel more confortable with.</p>
+					</section>
+					<section>
+						<h2>Where to start?</h2>
+						<p>Take a look to Firefox OS Boilerplate App by Rober Nyman</p>
+						<p><a href="https://github.com/robnyman/Firefox-OS-Boilerplate-App" target="_blank">https://github.com/robnyman/Firefox-OS-Boilerplate-App</a></p>
+						<p>or @Rumyra's Pocket Kitten</p>
+						<p><a href="https://github.com/Rumyra/Pocket-Kitten">https://github.com/Rumyra/Pocket-Kitten</a></p>
+					</section>
+
+					<section>
+						<h2>The Firefox OS simulator</h2>
+						<p>Version 4.0</p>
+						<p><img src="img/firefox-os-simulator-4.0.png"></img></p>
+						<p><a href="https://addons.mozilla.org/en-US/firefox/addon/firefox-os-simulator/">Get the latest version here!</a></p>
+					</section>
+
+					<section>
+						<h2>Frameworks?</h2>
+						<p>The Web, doesn't have a framework</p>
+						<p class="fragment">There are thousands of web frameworks, use your favourite one!</p>
+						<p class="fragment">
+							<p class="fragment">If you want to check the design principles followed in the phone, check <a href="http://buildingfirefoxos.com">http://buildingfirefoxos.com</a>
+							</p>
+						</p>
+					</section>
+
+					<section>
+						<h2>Even more tools</h2>
+						<p>Thanks to @ladybenko we have the power of modern tools</p>
+						<p><img src="img/yo.png"></img></p>
+						<p><a href="https://npmjs.org/package/generator-firefoxos">https://npmjs.org/package/generator-firefoxos</a></p>
+					</section>
+					<section>
+						<h2>Even more tools</h2>
+						<p>Screencast of the yeoman generator</p>
+						<object width="560" height="315"><param name="movie" value="//www.youtube.com/v/VOQVuAfCDHc?hl=en_GB&amp;version=3&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube.com/v/VOQVuAfCDHc?hl=en_GB&amp;version=3&amp;rel=0" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+						<p><a href="http://youtu.be/VOQVuAfCDHc">http://youtu.be/VOQVuAfCDHc</a></p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Web App Distribution</h2>
+						<p>Again breaking the way the market works</p>
+						<p>Freedom for the developer and the user</p>
+						<pre>
+						<code contenteditable>
+var request = navigator.mozApps.install("http://robnyman.github.com/Firefox-OS-Boilerplate-App/manifest.webapp");
+request.onsuccess = function() {
+  // great - display a message, or redirect to a launch page
+};
+request.onerror = function() {
+  // whoops - this.error.name has details
+};
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>Web App Distribution</h2>
+						<p>But still keeping the traditional model</p>
+						<p><a href="https://marketplace.mozilla.org">https://marketplace.mozilla.org</a></p>
+					</section>
+				</section>
+
+				<section>
+					<h2>Thank you!</h2>
+					<p><img src="img/blaze-your-own-path.jpg"></img></p>
+					<p>Questions?</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+			/*
+			function installMe() {
+				if (navigator.mozApps) {
+					navigator.mozApps.install('http://arcturus.github.io/firefoxos-presentation-inception/manifest.webapp');
+				}
+			}
+
+			document.getElementById('foxtail').addEventListener('click', installMe);
+			*/
+
+		</script>
+
+	</body>
+</html>
